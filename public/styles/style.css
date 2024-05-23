@@ -1,0 +1,29 @@
+:webkit-input-placeholder{
+    color: #ffffff;
+    transition:opacity .3s ease-in-out;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --font-actor: Actor;
+    --font-calibri: Calibri;
+  
+    /* font sizes */
+    --font-size-45xl: 64px;
+    --font-size-5xl: 24px;
+    --font-size-17xl: 36px;
+    --font-size-21xl: 40px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray: rgba(255, 255, 255, 0.8);
+    --color-lavenderblush: #ffedee;
+    --color-midnightblue: rgba(27, 25, 116, 0.17);
+  }
+  
