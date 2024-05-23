@@ -18,8 +18,7 @@
     <h1>History</h1>
 </div>
 
-<div class="container">
-    <div class="grid grid-cols-2 gap-4  text-center align-center justify-center items-center">
+<div class="container w-full grid grid-cols-2 gap-4 text-center align-center justify-center items-center">
         <div class="grid bg-purple-200 p-4 m-4">
             <img src="{{ asset('images/buku/pulang.jpg') }}" alt="Buku Pulang" class="p-4 align-center justify-center items-center mx-auto">
         </div>

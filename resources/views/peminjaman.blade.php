@@ -23,7 +23,7 @@
             <div class="flex flex-col w-4/10">
                 <div class="w-3/10">
                     <div class="h-full flex flex-col justify-center items-center">
-                        <img src="{{ asset(''images/buku/image.png') }}" alt="Buku Photo Profile" class="p-4 mx-auto" style="height: 150px; width: 150px;">
+                        <img src="{{ asset('images/buku/image.png') }}" alt="Buku Photo Profile" class="p-4 mx-auto" style="height: 150px; width: 150px;">
                     </div>
                 </div>
                 <div class="w-2/10">
@@ -37,10 +37,10 @@
                 <br>
                 <br>
                 <center>
-                    <p class="underline mt-2">Daftar Buku</p>
-                    <p class="underline mt-2">Ketentuan</p>
-                    <p class="underline mt-2">Peminjaman</p>
-                    <p class="underline mt-2">Kadaluarsa</p>
+                    <a href="{{ route('daftarbuku')}}"><p class="underline mt-2">Daftar Buku</p></a>
+                    <a href="{{ route('ketentuan')}}"><p class="underline mt-2">Ketentuan</p></a>
+                    <a href="{{ route('peminjaman')}}"><p class="underline mt-2">Peminjaman</p></a>
+                    <a href="{{ route('kadaluarsa')}}"><p class="underline mt-2">Kadaluarsa</p></a>
                 </center>
             </div>
         </div>

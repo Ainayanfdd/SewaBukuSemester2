@@ -33,13 +33,6 @@ Route::get('/detailbuku', function () {
     return view('detailbuku');
 });
 
-Route::get('/kadaluarsa', function () {
-    return view('kadaluarsa');
-});
-
-Route::get('/ketentuan', function () {
-    return view('ketentuan');
-});
 
 Route::get('/contact', function () {
     return view('contact');
@@ -61,16 +54,8 @@ Route::get('/wishlist', function () {
     return view('wishlist');
 });
 
-Route::get('/daftarbuku', function () {
-    return view('daftarbuku');
-});
-
 Route::get('/notify', function () {
     return view('notify');
-});
-
-Route::get('/peminjaman', function () {
-    return view('peminjaman');
 });
 
 Route::get('/legalandhelp', function () {
@@ -83,4 +68,23 @@ Route::get('/test', function () {
 
 Route::get('/notifikasi', function () {
     return view('notifikasi');
+});
+
+//prefix admin
+Route::prefix('admin')->group(function () {
+    Route::get('/kadaluarsa', function () {
+        return view('kadaluarsa');
+    })->name('kadaluarsa');
+
+    Route::get('/ketentuan', function () {
+        return view('ketentuan');
+    })->name('ketentuan');
+
+    Route::get('/peminjaman', function () {
+        return view('peminjaman');
+    })->name('peminjaman');
+
+    Route::get('/daftarbuku', function () {
+        return view('daftarbuku');
+    })->name('daftarbuku');
 });

@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Wishlist</title>
+    <title>Sewa Buku Online</title>
 </head>
 <body>
     @include('components/header')

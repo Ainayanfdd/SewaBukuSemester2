@@ -37,10 +37,10 @@
                 <br>
                 <br>
                 <center>
-                    <p class="underline mt-2">Daftar Buku</p>
-                    <p class="underline mt-2">Ketentuan</p>
-                    <p class="underline mt-2">Peminjaman</p>
-                    <p class="underline mt-2">Kadaluarsa</p>
+                    <a href="{{ route('daftarbuku')}}"><p class="underline mt-2">Daftar Buku</p></a>
+                    <a href="{{ route('ketentuan')}}"><p class="underline mt-2">Ketentuan</p></a>
+                    <a href="{{ route('peminjaman')}}"><p class="underline mt-2">Peminjaman</p></a>
+                    <a href="{{ route('kadaluarsa')}}"><p class="underline mt-2">Kadaluarsa</p></a>
                 </center>
             </div>
         </div>
