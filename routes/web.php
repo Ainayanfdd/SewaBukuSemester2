@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MainpageController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,41 +25,38 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+//Untuk akses user
+Route::get('/login', [UserController::class, 'login']);
+Route::get('/register', [UserController::class, 'register']);
 
-Route::get('/register', function () {
-    return view('register');
+//Untuk yang ada di navbar
+Route::get('/library', [MainpageController::class, 'library']);
+Route::get('/history', [MainpageController::class, 'history']);
+Route::get('/kategori', [MainpageController::class, 'kategori']);
+Route::get('/wishlist', [MainpageController::class, 'wishlist']);
+Route::get('/notify', [MainpageController::class, 'notify']);
+Route::get('/notifikasi', [MainpageController::class, 'notifikasi']);
+
+//prefix admin
+Route::prefix('admin')->group(function () {
+    Route::get('/kadaluarsa', [AdminController::class, 'kadaluarsa'])->name('kadaluarsa');
+    Route::get('/ketentuan', [AdminController::class, 'ketentuan'])->name('ketentuan');
+    Route::get('/peminjaman', [AdminController::class, 'peminjaman'])->name('peminjaman');
+    Route::get('/daftarbuku', [AdminController::class, 'daftarbuku'])->name('daftarbuku');
+    Route::prefix('buku')->group(function () {
+        Route::get('/{ISBN}/edit', [AdminController::class, 'edit'])->name('admin.buku.edit');
+        Route::put('/{ISBN}', [AdminController::class, 'updateBuku'])->name('admin.buku.updateBuku');
+        Route::delete('/{ISBN}', [AdminController::class, 'destroy'])->name('admin.buku.destroy');
+        Route::post('/', [AdminController::class, 'tambahBuku'])->name('admin.buku.tambahBuku');
+    });
 });
 
 Route::get('/detailbuku', function () {
     return view('detailbuku');
 });
 
-
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/library', function () {
-    return view('library');
-});
-
-Route::get('/history', function () {
-    return view('history');
-});
-
-Route::get('/kategori', function () {
-    return view('kategori');
-});
-
-Route::get('/wishlist', function () {
-    return view('wishlist');
-});
-
-Route::get('/notify', function () {
-    return view('notify');
 });
 
 Route::get('/legalandhelp', function () {
@@ -64,27 +65,4 @@ Route::get('/legalandhelp', function () {
 
 Route::get('/test', function () {
     return view('test');
-});
-
-Route::get('/notifikasi', function () {
-    return view('notifikasi');
-});
-
-//prefix admin
-Route::prefix('admin')->group(function () {
-    Route::get('/kadaluarsa', function () {
-        return view('kadaluarsa');
-    })->name('kadaluarsa');
-
-    Route::get('/ketentuan', function () {
-        return view('ketentuan');
-    })->name('ketentuan');
-
-    Route::get('/peminjaman', function () {
-        return view('peminjaman');
-    })->name('peminjaman');
-
-    Route::get('/daftarbuku', function () {
-        return view('daftarbuku');
-    })->name('daftarbuku');
 });
