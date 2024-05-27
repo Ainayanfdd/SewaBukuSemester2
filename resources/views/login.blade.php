@@ -23,7 +23,7 @@
                     <div class="mb-4">
                         <input type="password" id="password" name="password" placeholder="Password" class="w-full bg-violet-400 border-violet-700 hover:bg-violet-500 rounded-md p-2 focus:outline-none focus:border-violet-700 text-white" required>
                     </div>
-                    <div class="text-sm mb-4 text-black">Belum punya akun?<a href="#" class="text-blue-500 hover:text-blue-700">Klik untuk mendaftar</a></div>
+                    <div class="text-sm mb-4 text-black">Belum punya akun?<a href="{{route('register')}}"" class="text-blue-500 hover:text-blue-700">Klik untuk mendaftar</a></div>
                     <div class="flex items-center mb-4">
                         <input type="checkbox" id="agree" class="checkbox-primary checkbox-sm" required>
                         <label for="agree" class="ml-1 text-sm">Saya menyetujui Syarat Ketentuan dan Kebijakan Privasi yang berlaku.</label>

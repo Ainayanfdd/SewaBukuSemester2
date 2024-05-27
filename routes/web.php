@@ -26,8 +26,8 @@ Route::get('/welcome', function () {
 });
 
 //Untuk akses user
-Route::get('/login', [UserController::class, 'login']);
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/register', [UserController::class, 'register'])->name('register');
 
 //Untuk yang ada di navbar
 Route::get('/library', [MainpageController::class, 'library']);
