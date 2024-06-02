@@ -55,6 +55,7 @@
         <div class="flex flex-col w-5/10 w-8/10 mx-auto col-span-3">
             <div class="p-5 m-5">
                 <div class="relative overflow-x-auto">
+                    @include('Session')
                     <table
                         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border border-grey-500">
                         <thead class="text-xs text-gray-700 uppercase bg-blue-50 dark:bg-blue-700 dark:text-gray-400">

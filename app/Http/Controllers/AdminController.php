@@ -32,39 +32,51 @@ class AdminController extends Controller
 
     public function edit($ISBN)
     {
-        $DataBuku = Buku::all();
-        $buku = Buku::where('ISBN', $ISBN)->firstOrFail();
-        return view('admin.daftarbuku', compact('buku', 'DataBuku'));
+        try {
+            $DataBuku = Buku::all();
+            $buku = Buku::where('ISBN', $ISBN)->firstOrFail();
+            return view('admin.daftarbuku', compact('buku', 'DataBuku'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
     public function updateBuku(Request $request, $ISBN)
     {
-        // Validate the request data
-        $request->validate([
-            'pengarang' => 'required',
-            'penerbit' => 'required',
-            'harga' => 'required',
-            'keterangan' => 'required',
-        ]);
+        try {
+            // Validate the request data
+            $request->validate([
+                'pengarang' => 'required',
+                'penerbit' => 'required',
+                'harga' => 'required',
+                'keterangan' => 'required',
+            ]);
 
-        // Find the book by ISBN
-        $book = Buku::where('ISBN', $ISBN)->first();
+            // Find the book by ISBN
+            $book = Buku::where('ISBN', $ISBN)->first();
 
-        if (!$book) {
-            // Handle book not found
-            return redirect()->back()->with('error', 'Book not found.');
+            if (!$book) {
+                // Handle book not found
+                return redirect()->back()->with('error', 'Book not found.');
+            }
+
+            // Update the book with the new data
+
+            $book->nama_buku = $request->nama_buku;
+            $book->pengarang = $request->pengarang;
+            $book->pengarang = $request->pengarang;
+            $book->pengarang = $request->pengarang;
+            $book->penerbit = $request->penerbit;
+            $book->harga = $request->harga;
+            $book->keterangan = $request->keterangan;
+
+            // Save the updated book
+            $book->save();
+
+            // Redirect back with success message
+            return redirect()->back()->with('success', 'Book updated successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
         }
-
-        // Update the book with the new data
-        $book->pengarang = $request->pengarang;
-        $book->penerbit = $request->penerbit;
-        $book->harga = $request->harga;
-        $book->keterangan = $request->keterangan;
-
-        // Save the updated book
-        $book->save();
-
-        // Redirect back with success message
-        return redirect()->back()->with('success', 'Book updated successfully.');
     }
     public function destroy($ISBN)
     {
@@ -74,39 +86,43 @@ class AdminController extends Controller
     }
     public function tambahBuku(Request $request)
     {
-        $request->validate([
-            'judul' => 'required|string|max:255',
-            'ISBN' => 'required|string|max:13|unique:buku',
-            'pengarang' => 'required|string|max:255',
-            'penerbit' => 'required|string|max:255',
-            'harga' => 'required|numeric',
-            'keterangan' => 'nullable|string',
-            'agama' => 'required|string|max:255',
-            'budaya' => 'required|string|max:255',
-            'nonfiksi' => 'required|string|max:255',
-            'fiksi' => 'required|string|max:255',
-            'referensi' => 'nullable|string|max:255',
-        ]);
+        try {
+            $request->validate([
+                'nama_buku' => 'required|string|max:255',
+                'ISBN' => 'required|string|max:13|unique:buku',
+                'pengarang' => 'required|string|max:255',
+                'penerbit' => 'required|string|max:255',
+                'harga' => 'required|numeric',
+                'keterangan' => 'nullable|string',
+                'agama' => 'required|string|max:255',
+                'budaya' => 'required|string|max:255',
+                'nonfiksi' => 'required|string|max:255',
+                'fiksi' => 'required|string|max:255',
+                'referensi' => 'nullable|string|max:255',
+            ]);
 
-        $kategori = Kategori::create([
-            'kategori_ID' => $request->ISBN,
-            'agama' => $request->agama,
-            'budaya' => $request->budaya,
-            'nonfiksi' => $request->nonfiksi,
-            'fiksi' => $request->fiksi,
-            'referensi' => $request->referensi ?? 'Tidak Ada',
-        ]);
+            $kategori = Kategori::create([
+                'kategori_ID' => $request->ISBN,
+                'agama' => $request->agama,
+                'budaya' => $request->budaya,
+                'nonfiksi' => $request->nonfiksi,
+                'fiksi' => $request->fiksi,
+                'referensi' => $request->referensi ?? 'Tidak Ada',
+            ]);
 
-        Buku::create([
-            'judul' => $request->judul,
-            'ISBN' => $request->ISBN,
-            'kategori_ID' => $kategori->Kategori_ID,
-            'pengarang' => $request->pengarang,
-            'penerbit' => $request->penerbit,
-            'harga' => $request->harga,
-            'keterangan' => $request->keterangan,
-        ]);
+            Buku::create([
+                'nama_buku' => $request->nama_buku,
+                'ISBN' => $request->ISBN,
+                'kategori_ID' => $kategori->Kategori_ID,
+                'pengarang' => $request->pengarang,
+                'penerbit' => $request->penerbit,
+                'harga' => $request->harga,
+                'keterangan' => $request->keterangan,
+            ]);
 
-        return redirect()->route('daftarbuku')->with('success', 'Buku berhasil ditambahkan');
+            return redirect()->route('daftarbuku')->with('success', 'Buku berhasil ditambahkan');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 }

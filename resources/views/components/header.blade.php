@@ -32,11 +32,10 @@
                         <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                         <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                             <!-- Sidebar content here -->
-                            <a><img src="images/buku/image.png" class="size-12">Melody</a>
-                            <li><a href="#">Note</a></li>
-                            <li><a href="#">Legal and Help</a></li>
-                            <li><a href="#">Logout</a></li>
-
+                            <a><img src="images/buku/image.png" class="size-24"><b>{{$user->namaDepan}} {{$user->namaBelakang}}</b></a>
+                            <li><a href="{{route('contact')}}">Note</a></li>
+                            <li><a href="{{route('legalandhelp')}}">Legal and Help</a></li>
+                            <li><a href="{{route('actionlogout')}}">Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,9 +50,9 @@
                     </a>
                     @else
                     <span class="ml-auto flex items-center">Hello,&nbsp;<h2 class="font-bold">{{$user->namaDepan}}!</h2></span>
-                    <a href="{{route('actionlogout')}}">
+                    <!-- <a href="{{route('actionlogout')}}">
                         <button class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center ml-5">LOGOUT</button>
-                    </a>
+                    </a> -->
                     @endif
                 </div>
             </div>

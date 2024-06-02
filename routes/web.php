@@ -60,11 +60,11 @@ Route::get('/detailbuku', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::get('/legalandhelp', function () {
     return view('legalandhelp');
-});
+})->name('legalandhelp');
 
 Route::get('/test', function () {
     return view('test');
