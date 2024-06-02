@@ -11,6 +11,7 @@ class Penyewa extends Model
 
     protected $table = 'penyewa';
 
+    
     protected $fillable = [
         'user_ID',
         'email',

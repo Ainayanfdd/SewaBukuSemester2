@@ -19,15 +19,18 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('dashboard');
-});
+})->name('home');
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
 //Untuk akses user
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('web');
+Route::post('/login', [UserController::class, 'actionlogin'])->name('actionlogin');
 Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::post('/register', [UserController::class, 'actionregister'])->name('actionregister');
+Route::get('/logoutSuccess', [UserController::class, 'actionlogout'])->name('actionlogout');
 
 //Untuk yang ada di navbar
 Route::get('/library', [MainpageController::class, 'library']);

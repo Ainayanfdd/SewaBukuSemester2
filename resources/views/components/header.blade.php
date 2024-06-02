@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    @php
+    $user = Auth::user();
+    @endphp
     <header>
         <div class="grid grid-rows-2">
             <div class="bg-purple-600 flex justify-between px-10">
@@ -42,9 +45,16 @@
                     <h1>INTELEK</h1>
                 </div>
                 <div class="flex items-center justify-center">
-                    <a href="{{route('login')}}"">
-                    <button class=" bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">MASUK </button>
+                    @if(!$user)
+                    <a href="{{route('login')}}">
+                        <button class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">MASUK </button>
                     </a>
+                    @else
+                    <span class="ml-auto flex items-center">Hello,&nbsp;<h2 class="font-bold">{{$user->namaDepan}}!</h2></span>
+                    <a href="{{route('actionlogout')}}">
+                        <button class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center ml-5">LOGOUT</button>
+                    </a>
+                    @endif
                 </div>
             </div>
             <nav>
