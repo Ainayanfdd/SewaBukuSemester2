@@ -22,9 +22,11 @@
                     <div class="text-5xl font-extrabold mb-4 text-black text-center text-blue-800">MASUK</div>
                     <br>
                     <div class="mb-4">
+                        <label for="email">Email:</label>
                         <input type="email" id="email" name="email" placeholder="email" class="w-full bg-violet-400 border-violet-700 hover:bg-violet-500 rounded-md p-2 focus:outline-none focus:border-violet-700 text-white" required>
                     </div>
                     <div class="mb-4">
+                        <label for="password">Password:</label>
                         <input type="password" id="password" name="password" placeholder="Password" class="w-full bg-violet-400 border-violet-700 hover:bg-violet-500 rounded-md p-2 focus:outline-none focus:border-violet-700 text-white" required>
                     </div>
                     <div class="text-sm mb-4 text-black">Belum punya akun?<a href="{{route('register')}}"" class=" text-blue-500 hover:text-blue-700">Klik untuk mendaftar</a></div>
