@@ -32,7 +32,9 @@
                         <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                         <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                             <!-- Sidebar content here -->
-                            <a><img src="images/buku/image.png" class="size-24"><b>{{$user->namaDepan}} {{$user->namaBelakang}}</b></a>
+                            @if($user)
+                                <a><img src="images/buku/image.png" class="size-24"><b>{{$user->namaDepan}} {{$user->namaBelakang}}</b></a>
+                            @endif
                             <li><a href="{{route('contact')}}">Note</a></li>
                             <li><a href="{{route('legalandhelp')}}">Legal and Help</a></li>
                             <li><a href="{{route('actionlogout')}}">Logout</a></li>
