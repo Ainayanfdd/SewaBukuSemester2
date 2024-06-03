@@ -38,7 +38,7 @@ Route::get('/logoutSuccess', [UserController::class, 'actionlogout'])->name('act
 //Untuk yang ada di navbar
 Route::get('/library', [MainpageController::class, 'library']);
 Route::get('/history', [MainpageController::class, 'history']);
-Route::get('/kategori', [MainpageController::class, 'kategori']);
+Route::get('/kategori', [MainpageController::class, 'kategori'])->name('kategori');
 Route::get('/wishlist', [MainpageController::class, 'wishlist']);
 Route::get('/notify', [MainpageController::class, 'notify']);
 Route::get('/notifikasi', [MainpageController::class, 'notifikasi']);

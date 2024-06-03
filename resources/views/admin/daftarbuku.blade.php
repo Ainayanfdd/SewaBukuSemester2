@@ -116,6 +116,9 @@
                         <thead class="text-xs text-gray-700 uppercase bg-blue-50 dark:bg-blue-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-center border border-grey-500">
+                                    Gambar
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center border border-grey-500">
                                     Judul buku
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-center border border-grey-500">
@@ -141,6 +144,9 @@
                         <tbody class="text-center">
                             @foreach ($DataBuku as $buku)
                                 <tr class="bg-white border-b dark:bg-gray-800">
+                                    <td class="px-6 py-4 border border-grey-500">
+                                        <img src="{{ $buku['gambar'] }}" alt="{{ $buku['nama_buku'] }}" width="50px" height="100px">
+                                    </td>
                                     <td class="px-6 py-4 border border-grey-500">
                                         {{ $buku['nama_buku'] }}
                                     </td>
