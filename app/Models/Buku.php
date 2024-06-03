@@ -14,6 +14,7 @@ class Buku extends Model
     protected $primaryKey = 'ISBN';
 
     protected $fillable = [
+        'nama_buku',
         'ISBN',
         'kategori_ID',
         'pengarang',
