@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainpageController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\PembayaranContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'actionregister'])->name('actionregister');
 Route::get('/logoutSuccess', [UserController::class, 'actionlogout'])->name('actionlogout');
 
+
+
 //Untuk yang ada di navbar
 Route::get('/library', [MainpageController::class, 'library']);
 Route::get('/history', [MainpageController::class, 'history']);
@@ -54,6 +57,8 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+
+
 Route::get('/detailbuku', function () {
     return view('detailbuku');
 });
@@ -69,3 +74,5 @@ Route::get('/legalandhelp', function () {
 Route::get('/test', function () {
     return view('test');
 });
+
+Route::get('Pembayaran', [PembayaranController::class,'borrow']);
