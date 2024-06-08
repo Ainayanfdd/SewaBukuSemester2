@@ -61,6 +61,7 @@ class AdminController extends Controller
 
             // Update the book with the new data
 
+            $book->gambar = $request->gambar;
             $book->nama_buku = $request->nama_buku;
             $book->pengarang = $request->pengarang;
             $book->pengarang = $request->pengarang;
@@ -88,6 +89,7 @@ class AdminController extends Controller
     {
         try {
             $request->validate([
+                'gambar' => 'required|string|max:2000',
                 'nama_buku' => 'required|string|max:255',
                 'ISBN' => 'required|string|max:13|unique:buku',
                 'pengarang' => 'required|string|max:255',
@@ -111,6 +113,7 @@ class AdminController extends Controller
             ]);
 
             Buku::create([
+                'gambar' => $request->gambar,
                 'nama_buku' => $request->nama_buku,
                 'ISBN' => $request->ISBN,
                 'kategori_ID' => $kategori->Kategori_ID,

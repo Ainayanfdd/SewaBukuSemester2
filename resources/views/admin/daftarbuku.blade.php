@@ -224,6 +224,12 @@
                                                     method="POST">
                                                     @csrf
                                                     <div class="mb-4">
+                                                        <label for="gambar"
+                                                            class="block text-gray-700 text-sm font-bold mb-2">Gambar Buku:</label>
+                                                        <input type="text" name="gambar" id="gambar" placeholder="Gambar Buku"
+                                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                                    </div>
+                                                    <div class="mb-4">
                                                         <label for="nama_buku"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Judul:</label>
                                                         <input type="text" name="nama_buku" id="nama_buku" placeholder="Judul Buku"
@@ -376,6 +382,13 @@
                                                     method="POST">
                                                     @csrf
                                                     @method('PUT')
+                                                    <div class="mb-4">
+                                                        <label for="gambar"
+                                                            class="block text-gray-700 text-sm font-bold mb-2">Gambar:</label>
+                                                        <input type="text" name="gambar" id="gambar"
+                                                            value="{{ $buku['gambar'] }}"  placeholder="Gambar Buku"
+                                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                                    </div>
                                                     <div class="mb-4">
                                                         <label for="nama_buku"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Judul:</label>

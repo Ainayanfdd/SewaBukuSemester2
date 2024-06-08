@@ -1,0 +1,122 @@
+Buku2:
+1. 
+nama_buku:
+To Kill a Mocking Bird
+Pengarang:
+'Harper Lee Chong Cing';
+Penerbit: 
+Harper Perenial
+Harga:
+80000
+ISBN:
+9780446310789
+Keterangan:
+Fiksi Klasik
+Kategori_ID: 010
+Gambar: 
+https://m.media-amazon.com/images/I/516IbJ592JL.jpg
+
+2. 
+nama_buku : A Love Letter to Europe
+pengarang : J.K. Rowling
+penerbit : penguin classics
+harga: 85.000
+ISBN: 9781529381115
+Kategori_ID : 011
+keterangan: Fiksi Klasik
+gambar: https://m.media-amazon.com/images/I/51M4wyrrwLL._AC_UF1000,1000_QL80_.jpg
+
+3.
+nama_buku : The Chronicles Of Narnia
+Penerbit:
+Gramedia Pustaka Utama
+Pengarang : 
+C.S Lewis
+ISBN:
+9786020336398
+Kategori_ID: 012
+keterangan : fiksi
+Harga 90.000
+gambar: https://cdn.gramedia.com/uploads/items/Narnia_1_cov_page-0001.jpg
+
+4.
+nama_buku :
+the crimes of Grindelwald
+pengarang : J.K. Rowling
+penerbit : penguin classics
+harga: 89000
+ISBN: 9781781102336
+Kategori_ID: 013
+keterangan: fiksi klasik                                                               gambar: https://m.media-amazon.com/images/I/71REgKCZdOL._AC_UF350,350_QL80_.jpg
+
+5.
+Pengarang: J. R. R. Tolkien
+nama_buku: The Hobbit
+ISBN: 9796867672
+Penerbit: Gramedia Pustaka Utama
+Kategori_ID: 014
+Keterangan: Seri The Lord of The Rings
+harga: 50000
+gambar: 
+https://id.wikipedia.org/wiki/The_Hobbit#/media/Berkas:ECEI5544big.jpg
+
+6. 
+nama_buku :Monkey king
+pengarang : J.K. Rowling
+penerbit : penguin classics
+harga: 85.000
+ISBN:  9780593511749
+keterangan fiksi klasik
+Kategori_ID: 015
+gambar: https://m.media-amazon.com/images/I/81W32lVkdwL._AC_UF1000,1000_QL80_.jpg
+
+7.
+nama_buku : The Line Between Loss & Wonders
+Penerbit: iwec
+keterangan : fiksi
+Harga: 89.000
+pengarang : ayra sirait
+Kategori_ID: 016
+ISBN: 9786237716730
+gambar:
+https://cdn.gramedia.com/uploads/picture_meta/2023/8/2/fmdapiqtmxduptffmswvvu.jpg
+
+8.
+nama_buku : Fantastic Beasts and Where to find it
+pengarang : J.K. Rowling
+penerbit : penguin classics                                             harga: 65.000
+ISBN: 9781338216790
+keterangan: fiksi klasik
+Kategori_ID: 017                                                                gambar:https://m.media-amazon.com/images/I/91q7mXyE-2L._AC_UF350,350_QL80_.jpg
+
+9.
+nama_buku: Two Queens Of Baghdad
+Penerbit: Republika Penerbit
+pengarang: nabia abbot
+Harga: 90.000
+keterangan: nonfiksi
+Kategori_ID: 018
+ISBN: 9786232791084
+https://cdn.gramedia.com/uploads/picture_meta/2023/4/15/2bbafxg9ufseexzm8wrrhz.jpg
+
+10.
+nama_buku : Nostradamus
+pengarang: Mario Reading
+Penerbit: IIman Real
+keterangan : nonfiksi
+Kategori_ID: 019
+Harga : 89000
+ISBN: 9786029560787
+gambar:
+https://cdn.gramedia.com/uploads/picture_meta/2023/2/2/pcwzxhfj4iryh6ztbub6qi.jpg
+
+11.
+nama_buku : the hobbit and the lord of the rings
+pengarang : J.R.R Tolkien
+penerbit : Del Rey
+harga: 55.000
+ISBN: 0008387753
+Kategori_ID: 020
+keterangan: fiksi klasik
+gambar: https://m.media-amazon.com/images/I/31c8SND6ADL.jpg
+
