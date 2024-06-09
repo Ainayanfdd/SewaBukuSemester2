@@ -74,7 +74,10 @@ class AdminController extends Controller
             $book->save();
 
             // Redirect back with success message
-            return redirect()->back()->with('success', 'Book updated successfully.');
+            return redirect()
+                ->back()
+                ->with('success', 'Book updated successfully.')
+                ->with('alert', 'Buku berhasil diganti!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
@@ -83,7 +86,10 @@ class AdminController extends Controller
     {
         $buku = Buku::where('ISBN', $ISBN)->firstOrFail();
         $buku->delete();
-        return redirect()->route('daftarbuku')->with('success', 'Book deleted successfully');
+        return redirect()
+        ->route('daftarbuku')
+        ->with('success', 'Book deleted successfully')
+        ->with('alert', 'Buku dihapus!');
     }
     public function tambahBuku(Request $request)
     {
@@ -123,7 +129,10 @@ class AdminController extends Controller
                 'keterangan' => $request->keterangan,
             ]);
 
-            return redirect()->route('daftarbuku')->with('success', 'Buku berhasil ditambahkan');
+            return redirect()
+            ->route('daftarbuku')
+            ->with('success', 'Buku berhasil ditambahkan')
+            ->with('alert', 'Buku berhasil ditambahkan!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }

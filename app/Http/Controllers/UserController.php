@@ -34,9 +34,9 @@ class UserController extends Controller
             if (Auth::attempt($data)) {
                 session()->flash('message', 'Login Berhasil!');
                 if (Auth::user()->role == 'Admin')
-                    return redirect()->route('daftarbuku');
+                    return redirect()->route('daftarbuku')->with('alert', 'Login Berhasil!');
                 else
-                    return redirect('/');
+                    return redirect('/')->with('alert', 'Login Berhasil!');
             } else {
                 throw new \Exception('Email atau Password Salah');
             }
@@ -73,7 +73,7 @@ class UserController extends Controller
             ]);
 
             session()->flash('message', 'Register Berhasil. Silahkan Login!');
-            return redirect('login');
+            return redirect('login')->with('alert', 'Register Berhasil. Silahkan Login!');
         } catch (\Exception $e) {
             // Handle the exception
             session()->flash('error', 'Error occurred while registering user: ' . $e->getMessage());
