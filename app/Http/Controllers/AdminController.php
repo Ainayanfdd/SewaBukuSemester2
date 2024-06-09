@@ -61,6 +61,7 @@ class AdminController extends Controller
 
             // Update the book with the new data
 
+            $book->gambar = $request->gambar;
             $book->nama_buku = $request->nama_buku;
             $book->pengarang = $request->pengarang;
             $book->pengarang = $request->pengarang;
@@ -73,7 +74,10 @@ class AdminController extends Controller
             $book->save();
 
             // Redirect back with success message
-            return redirect()->back()->with('success', 'Book updated successfully.');
+            return redirect()
+                ->back()
+                ->with('success', 'Book updated successfully.')
+                ->with('alert', 'Buku berhasil diganti!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
@@ -82,12 +86,16 @@ class AdminController extends Controller
     {
         $buku = Buku::where('ISBN', $ISBN)->firstOrFail();
         $buku->delete();
-        return redirect()->route('daftarbuku')->with('success', 'Book deleted successfully');
+        return redirect()
+        ->route('daftarbuku')
+        ->with('success', 'Book deleted successfully')
+        ->with('alert', 'Buku dihapus!');
     }
     public function tambahBuku(Request $request)
     {
         try {
             $request->validate([
+                'gambar' => 'required|string|max:2000',
                 'nama_buku' => 'required|string|max:255',
                 'ISBN' => 'required|string|max:13|unique:buku',
                 'pengarang' => 'required|string|max:255',
@@ -111,6 +119,7 @@ class AdminController extends Controller
             ]);
 
             Buku::create([
+                'gambar' => $request->gambar,
                 'nama_buku' => $request->nama_buku,
                 'ISBN' => $request->ISBN,
                 'kategori_ID' => $kategori->Kategori_ID,
@@ -120,7 +129,10 @@ class AdminController extends Controller
                 'keterangan' => $request->keterangan,
             ]);
 
-            return redirect()->route('daftarbuku')->with('success', 'Buku berhasil ditambahkan');
+            return redirect()
+            ->route('daftarbuku')
+            ->with('success', 'Buku berhasil ditambahkan')
+            ->with('alert', 'Buku berhasil ditambahkan!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }

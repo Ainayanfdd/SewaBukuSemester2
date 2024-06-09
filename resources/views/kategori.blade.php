@@ -100,13 +100,13 @@
             <h2>10.000/minggu</h2>
             <h2>FIKSI</h2>
         </div> -->
-            @foreach ($books as $buku)
-            <div class="flex-2 w-64 bg-purple-200 p-4 m-3 rounded">
+        @foreach ($books as $buku)
+        <div class="flex-2 w-64 bg-purple-200 p-4 m-3 rounded">
+            <a href="{{ route('detailbuku', $buku->ISBN) }}" class="flex-2 w-64 bg-purple-200 p-4 m-3 rounded block">
                 <img src="{{ $buku->gambar }}" alt="{{ $buku->namaBuku }}" class="p-4 align-center justify-center items-center mx-auto" style="height:300px;width:250px;">
                 <h2>{{ $buku->namaBuku }}</h2>
                 <h2>{{ $buku->harga }}/minggu</h2>
                 <h2>{{ $category }}</h2>
-                <h2 class="p-4"><button class="btn"><a href="/detailbuku">Detail Buku</a></button></h2>
             </div>
             @endforeach
 
