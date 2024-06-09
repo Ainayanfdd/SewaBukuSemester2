@@ -33,7 +33,10 @@ class UserController extends Controller
         try {
             if (Auth::attempt($data)) {
                 session()->flash('message', 'Login Berhasil!');
-                return redirect('/');
+                if (Auth::user()->role == 'Admin')
+                    return redirect()->route('daftarbuku');
+                else
+                    return redirect('/');
             } else {
                 throw new \Exception('Email atau Password Salah');
             }
@@ -66,6 +69,7 @@ class UserController extends Controller
                 'namaBelakang' => $request->namaBelakang,
                 'password' => Hash::make($request->password),
                 'alamat' => $request->alamat,
+                'role' => 'Penyewa',    
             ]);
 
             session()->flash('message', 'Register Berhasil. Silahkan Login!');

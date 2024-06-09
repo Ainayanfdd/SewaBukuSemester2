@@ -19,5 +19,6 @@ class Penyewa extends Model
         'namaDepan',
         'namaBelakang',
         'alamat',
+        'role',
     ];
 }
