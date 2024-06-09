@@ -31,8 +31,8 @@
         <input type="text" id="harga" name="harga" placeholder="Harga" class="w-full bg-violet-400 border-violet-700 hover:bg-violet-500 rounded-md p-2 focus:outline-none focus:border-violet-700 text-white" required>
         <label for="keterangan" class="mb-2">keterangan:</label>
         <input type="text" id="keterangan" name="keterangan" placeholder="keterangan    " class="w-full bg-violet-400 border-violet-700 hover:bg-violet-500 rounded-md p-2 focus:outline-none focus:border-violet-700 text-white" required>
-        
-    </div>
+        </div>
+    @include('midtrans')
 </div>
 
 </body>

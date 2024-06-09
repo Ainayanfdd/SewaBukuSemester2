@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Buku;
+    use App\Models\Buku;
 use App\Models\Kategori;
 
 class MainpageController extends Controller

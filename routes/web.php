@@ -42,6 +42,10 @@ Route::get('/notify', [MainpageController::class, 'notify']);
 Route::get('/notifikasi', [MainpageController::class, 'notifikasi']);
 Route::get('/detailbuku/{id}', [MainpageController::class, 'detailbuku'])->name('detailbuku');
 
+//Untuk pembayaran
+Route::get('/pembayaran/{ISBN}', [PembayaranController::class, 'paymentgateway'])->name('paymentgateway');
+Route::get('/pembayaran/{Pinjam_ID}/sukses', [PembayaranController::class, 'paySuccess'])->name('paySuccess');
+
 //prefix admin
 Route::prefix('admin')->group(function () {
     Route::get('/kadaluarsa', [AdminController::class, 'kadaluarsa'])->name('kadaluarsa');
