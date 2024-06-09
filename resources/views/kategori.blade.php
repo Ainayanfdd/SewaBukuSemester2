@@ -107,9 +107,8 @@
                 <h2>{{ $buku->namaBuku }}</h2>
                 <h2>{{ $buku->harga }}/minggu</h2>
                 <h2>{{ $category }}</h2>
-        </div>
-        </a>
-        @endforeach
+            </div>
+            @endforeach
 
     </div>
 

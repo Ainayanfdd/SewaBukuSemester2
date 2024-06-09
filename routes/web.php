@@ -77,4 +77,4 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('Pembayaran', [PembayaranController::class,'borrow']);
+Route::get('/Pembayaran', [PembayaranController::class,'borrow']);
