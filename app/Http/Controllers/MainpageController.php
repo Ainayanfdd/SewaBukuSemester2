@@ -73,4 +73,10 @@ class MainpageController extends Controller
     {
         return view('notify');
     }
+
+    public function detailbuku($ISBN)
+    {
+        $DetailBuku = Buku::where('ISBN', $ISBN)->firstOrFail();
+        return view('detailbuku', compact('DetailBuku'));
+    }
 }

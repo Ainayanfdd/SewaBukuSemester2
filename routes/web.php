@@ -33,8 +33,6 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'actionregister'])->name('actionregister');
 Route::get('/logoutSuccess', [UserController::class, 'actionlogout'])->name('actionlogout');
 
-
-
 //Untuk yang ada di navbar
 Route::get('/library', [MainpageController::class, 'library']);
 Route::get('/history', [MainpageController::class, 'history']);
@@ -42,6 +40,7 @@ Route::get('/kategori', [MainpageController::class, 'kategori'])->name('kategori
 Route::get('/wishlist', [MainpageController::class, 'wishlist']);
 Route::get('/notify', [MainpageController::class, 'notify']);
 Route::get('/notifikasi', [MainpageController::class, 'notifikasi']);
+Route::get('/detailbuku/{id}', [MainpageController::class, 'detailbuku'])->name('detailbuku');
 
 //prefix admin
 Route::prefix('admin')->group(function () {
@@ -58,10 +57,9 @@ Route::prefix('admin')->group(function () {
 });
 
 
-
-Route::get('/detailbuku', function () {
-    return view('detailbuku');
-});
+// Route::get('/detailbuku', function () {
+//     return view('detailbuku');
+// });
 
 Route::get('/contact', function () {
     return view('contact');
