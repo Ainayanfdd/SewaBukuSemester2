@@ -17,11 +17,12 @@
 <div class="flex text-center align-center justify-center items-center p-5 p-32">
   <div class="flex-1 w-32 p-5">
     <img src="{{ asset('images/buku/tekad.jpg') }}" alt="Buku Tekad" class="p-4 align-center justify-center items-center mx-auto">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <a href="/Pembayaran"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
     Borrow
-    </button>
+    </button></a>
 
   </div>
+  
   <div class="flex-1 w-14 ...">
     <h1>Detail Buku: </h1> <br>
     <div class="underline-content text-center">

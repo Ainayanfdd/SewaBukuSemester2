@@ -106,6 +106,7 @@
                 <h2>{{ $buku->namaBuku }}</h2>
                 <h2>{{ $buku->harga }}/minggu</h2>
                 <h2>{{ $category }}</h2>
+                <h2 class="p-4"><button class="btn"><a href="/detailbuku">Detail Buku</a></button></h2>
             </div>
             @endforeach
 

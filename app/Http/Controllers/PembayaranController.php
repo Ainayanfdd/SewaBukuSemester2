@@ -8,6 +8,6 @@ class PembayaranController extends Controller
 {
     public function borrow()
     {
-        return view('pembayaran');
+        return view('Pembayaran');
     }   
 }
