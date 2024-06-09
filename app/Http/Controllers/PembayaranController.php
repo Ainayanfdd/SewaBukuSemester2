@@ -48,8 +48,8 @@ class PembayaranController extends Controller
                 'ISBN' => $BeliBuku->ISBN,
                 'judulBuku' => $BeliBuku->nama_buku,
                 'status' => 'Diproses',
-                'tanggalPinjam' => today(),
-                'tanggalAkhir' => today()->addMonth(),
+                'tanggalPinjam' => today()->format('Y-m-d'),
+                'tanggalAkhir' => today()->addMonth()->format('Y-m-d'),
                 'biayaPinjam' => $BeliBuku->harga,
                 'snapToken' => $snapToken,
             ]);

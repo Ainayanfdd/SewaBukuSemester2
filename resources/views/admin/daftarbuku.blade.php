@@ -40,14 +40,17 @@
                     <a href="{{ route('daftarbuku')}}">
                         <p class="underline mt-2">Daftar Buku</p>
                     </a>
-                    <a href="{{ route('ketentuan')}}">
+                    <!-- <a href="{{ route('ketentuan')}}">
                         <p class="underline mt-2">Ketentuan</p>
-                    </a>
+                    </a> -->
                     <a href="{{ route('peminjaman')}}">
                         <p class="underline mt-2">Peminjaman</p>
                     </a>
                     <a href="{{ route('kadaluarsa')}}">
                         <p class="underline mt-2">Kadaluarsa</p>
+                    </a>
+                    <a href="{{ route('actionlogout')}}">
+                        <p class="underline mt-2">Logout</p>
                     </a>
                 </center>
             </div>
@@ -95,7 +98,7 @@
                     </table>
                 </div>
 
-                <div class="flex justify-end">
+                <div class="flex justify-end mt-4">
                     <button
                         class="bg-blue-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded flex items-center"
                         data-modal-target="addBookModal" data-modal-toggle="addBookModal">
@@ -145,7 +148,8 @@
                             @foreach ($DataBuku as $buku)
                                 <tr class="bg-white border-b dark:bg-gray-800">
                                     <td class="px-6 py-4 border border-grey-500">
-                                        <img src="{{ $buku['gambar'] }}" alt="{{ $buku['nama_buku'] }}" width="50px" height="100px">
+                                        <img src="{{ $buku['gambar'] }}" alt="{{ $buku['nama_buku'] }}" width="50px"
+                                            height="100px">
                                     </td>
                                     <td class="px-6 py-4 border border-grey-500">
                                         {{ $buku['nama_buku'] }}
@@ -171,7 +175,7 @@
                                         <a href="#" data-modal-target="editModal-{{ $loop->index }}"
                                             data-modal-toggle="editModal-{{ $loop->index }}" class="font-medium">
                                             <button
-                                                class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded flex items-center">
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
                                                 Edit
                                             </button>
                                         </a>
@@ -181,7 +185,7 @@
                                             @method('DELETE')
                                             <a href="#" class="font-medium hover:underline">
                                                 <button type="submit"
-                                                    class="bg-red-500 text-black hover:text-red-300 font-bold py-2 px-4 rounded flex items-center">
+                                                    class="bg-red-500 text-white hover:text-red-300 font-bold py-2 px-4 rounded flex items-center">
                                                     Delete
                                                 </button>
                                             </a>
@@ -222,14 +226,17 @@
                                                     @csrf
                                                     <div class="mb-4">
                                                         <label for="gambar"
-                                                            class="block text-gray-700 text-sm font-bold mb-2">Gambar Buku:</label>
-                                                        <input type="text" name="gambar" id="gambar" placeholder="Gambar Buku"
+                                                            class="block text-gray-700 text-sm font-bold mb-2">Gambar
+                                                            Buku:</label>
+                                                        <input type="text" name="gambar" id="gambar"
+                                                            placeholder="Gambar Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="nama_buku"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Judul:</label>
-                                                        <input type="text" name="nama_buku" id="nama_buku" placeholder="Judul Buku"
+                                                        <input type="text" name="nama_buku" id="nama_buku"
+                                                            placeholder="Judul Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
@@ -241,43 +248,50 @@
                                                     <div class="mb-4">
                                                         <label for="pengarang"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Pengarang:</label>
-                                                        <input type="text" name="pengarang" id="pengarang" placeholder="Nama Pengarang"
+                                                        <input type="text" name="pengarang" id="pengarang"
+                                                            placeholder="Nama Pengarang"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="penerbit"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Penerbit:</label>
-                                                        <input type="text" name="penerbit" id="penerbit" placeholder="Nama Penerbit"
+                                                        <input type="text" name="penerbit" id="penerbit"
+                                                            placeholder="Nama Penerbit"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="agama"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Agama:</label>
-                                                        <input type="text" name="agama" id="agama" placeholder="Kategori Agama Buku"
+                                                        <input type="text" name="agama" id="agama"
+                                                            placeholder="Kategori Agama Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="budaya"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Budaya:</label>
-                                                        <input type="text" name="budaya" id="budaya" placeholder="Kategori Budaya Buku"
+                                                        <input type="text" name="budaya" id="budaya"
+                                                            placeholder="Kategori Budaya Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="nonfiksi"
                                                             class="block text-gray-700 text-sm font-bold mb-2">NonFiksi:</label>
-                                                        <input type="text" name="nonfiksi" id="nonfiksi" placeholder="Kategori NonFiksi? Ya/Tidak"
+                                                        <input type="text" name="nonfiksi" id="nonfiksi"
+                                                            placeholder="Kategori NonFiksi? Ya/Tidak"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="fiksi"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Fiksi:</label>
-                                                        <input type="text" name="fiksi" id="fiksi" placeholder="Kategori Fiksi? Ya/Tidak"
+                                                        <input type="text" name="fiksi" id="fiksi"
+                                                            placeholder="Kategori Fiksi? Ya/Tidak"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="referensi"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Referensi:</label>
-                                                        <input type="text" name="referensi" id="referensi"  placeholder="Kategori Referensi Buku: Kosongkan jika tidak ada"
+                                                        <input type="text" name="referensi" id="referensi"
+                                                            placeholder="Kategori Referensi Buku: Kosongkan jika tidak ada"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
 
@@ -290,7 +304,8 @@
                                                     <div class="mb-4">
                                                         <label for="keterangan"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Keterangan:</label>
-                                                        <textarea name="keterangan" id="keterangan" placeholder="Keterangan Buku"
+                                                        <textarea name="keterangan" id="keterangan"
+                                                            placeholder="Keterangan Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                                                     </div>
                                                 </form>
@@ -383,34 +398,35 @@
                                                         <label for="gambar"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Gambar:</label>
                                                         <input type="text" name="gambar" id="gambar"
-                                                            value="{{ $buku['gambar'] }}"  placeholder="Gambar Buku"
+                                                            value="{{ $buku['gambar'] }}" placeholder="Gambar Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="nama_buku"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Judul:</label>
                                                         <input type="text" name="nama_buku" id="nama_buku"
-                                                            value="{{ $buku['nama_buku'] }}"  placeholder="Judul Buku"
+                                                            value="{{ $buku['nama_buku'] }}" placeholder="Judul Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="ISBN"
                                                             class="block text-gray-700 text-sm font-bold mb-2">ISBN:</label>
-                                                        <input type="text" name="ISBN" id="ISBN" value="{{ $buku['ISBN'] }}" placeholder="ISBN"
+                                                        <input type="text" name="ISBN" id="ISBN" value="{{ $buku['ISBN'] }}"
+                                                            placeholder="ISBN"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="pengarang"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Pengarang:</label>
-                                                        <input type="text" name="pengarang" id="pengarang" placeholder="Nama Pengarang"
-                                                            value="{{ $buku['pengarang'] }}"
+                                                        <input type="text" name="pengarang" id="pengarang"
+                                                            placeholder="Nama Pengarang" value="{{ $buku['pengarang'] }}"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
                                                         <label for="penerbit"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Penerbit:</label>
-                                                        <input type="text" name="penerbit" id="penerbit" placeholder="Nama Penerbit"
-                                                            value="{{ $buku['penerbit'] }}"
+                                                        <input type="text" name="penerbit" id="penerbit"
+                                                            placeholder="Nama Penerbit" value="{{ $buku['penerbit'] }}"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                                     </div>
                                                     <div class="mb-4">
@@ -423,7 +439,8 @@
                                                     <div class="mb-4">
                                                         <label for="keterangan"
                                                             class="block text-gray-700 text-sm font-bold mb-2">Keterangan:</label>
-                                                        <textarea name="keterangan" id="keterangan" placeholder="Keterangan Buku"
+                                                        <textarea name="keterangan" id="keterangan"
+                                                            placeholder="Keterangan Buku"
                                                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $buku['keterangan'] }}</textarea>
                                                     </div>
                                                 </form>
@@ -443,6 +460,11 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="flex justify-end">
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4 rounded flex items-center align-end">Cetak
+                            Resi</button>
+                    </div>
                 </div>
             </div>
         </div>

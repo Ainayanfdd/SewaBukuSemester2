@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pinjam;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 use App\Models\Kategori;
@@ -11,7 +12,10 @@ class AdminController extends Controller
 {
     public function kadaluarsa()
     {
-        return view('admin.kadaluarsa');
+        $kadaluarsa = Pinjam::join('penyewa', 'penyewa.user_ID', '=', 'pinjam.user_ID')
+        ->where('tanggalAkhir', '<=', now())
+        ->get();
+        return view('admin.kadaluarsa', compact('kadaluarsa'));
     }
 
     public function ketentuan()
@@ -21,7 +25,8 @@ class AdminController extends Controller
 
     public function peminjaman()
     {
-        return view('admin.peminjaman');
+        $peminjaman = Pinjam::join('penyewa', 'penyewa.user_ID', '=', 'pinjam.user_ID')->get();
+        return view('admin.peminjaman', compact('peminjaman'));
     }
 
     public function daftarbuku()

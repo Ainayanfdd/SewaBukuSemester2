@@ -43,14 +43,17 @@
                     <a href="{{ route('daftarbuku')}}">
                         <p class="underline mt-2">Daftar Buku</p>
                     </a>
-                    <a href="{{ route('ketentuan')}}">
+                    <!-- <a href="{{ route('ketentuan')}}">
                         <p class="underline mt-2">Ketentuan</p>
-                    </a>
+                    </a> -->
                     <a href="{{ route('peminjaman')}}">
                         <p class="underline mt-2">Peminjaman</p>
                     </a>
                     <a href="{{ route('kadaluarsa')}}">
                         <p class="underline mt-2">Kadaluarsa</p>
+                    </a>
+                    <a href="{{ route('actionlogout')}}">
+                        <p class="underline mt-2">Logout</p>
                     </a>
                 </center>
             </div>
