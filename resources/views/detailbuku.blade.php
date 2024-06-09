@@ -27,16 +27,14 @@
 
   </div>
   <div class="flex-1 w-14 ...">
-    <h1>Detail Buku: </h1> <br>
-    <div class="underline-content text-center">
-        <h2>
-            Judul: Tekad
-        </h2>
-        <h2>Pengarang: Wahyudi Pratama</h2>
-        <h2>Penerbit: Kawah Mwdia Pustaka</h2>
-        <h2>ISBN:312421</h2> <br>
-        <h2>Sinopsis:</h2>
-        <h3>Novel ini mengungkapkan bagaimana kecantikan bisa menjadi sebuah kutukan dan bagaimana perempuan sering kali menjadi objek eksploitasi dan kekerasan. Novel Cantik Itu Luka memasukkan unsur-unsur realisma magis yang menjadi ciri khas karya Eka Kurnawan.</h3>
+    <h1 class="underline font-bold">Detail Buku: </h1> <br>
+    <div class="text-center">
+        <h2 class="font-bold">Judul: </h2> {{$DetailBuku->nama_buku}}
+        <h2 class="font-bold">Pengarang: </h2> {{$DetailBuku->pengarang}}
+        <h2 class="font-bold">Penerbit: </h2> {{$DetailBuku->penerbit}}
+        <h2 class="font-bold">ISBN: </h2> {{$DetailBuku->ISBN}}
+        <h2 class="font-bold">Sinopsis:</h2>
+        <h3>{{$DetailBuku->keterangan}}</h3>
     </div>
   </div>
 </div>

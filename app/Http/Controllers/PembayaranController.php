@@ -11,6 +11,7 @@ class PembayaranController extends Controller
 {
     public function borrow()
     {
+        $buku = Buku::all();
         return view('pembayaran');
     }
     public function paymentgateway($ISBN)
@@ -54,7 +55,7 @@ class PembayaranController extends Controller
                 'snapToken' => $snapToken,
             ]);
 
-            return view('Pembayaran', compact('ajukanPinjam'));
+            return view('Pembayaran', compact('ajukanPinjam', 'BeliBuku'));
         } else {
             return redirect()->route('login');
         }

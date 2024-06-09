@@ -100,6 +100,7 @@
             <h2>10.000/minggu</h2>
             <h2>FIKSI</h2>
         </div> -->
+        <?php echo $books ?>
         @foreach ($books as $buku)
         <div class="flex-2 w-64 bg-purple-200 p-4 m-3 rounded">
             <a href="{{ route('detailbuku', $buku->ISBN) }}" class="flex-2 w-64 bg-purple-200 p-4 m-3 rounded block">
