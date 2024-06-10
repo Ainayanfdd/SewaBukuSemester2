@@ -31,7 +31,11 @@
                 </div>
                 <div class="w-2/10">
                     <div class="h-full flex flex-col justify-center items-center">
-                        <h2>Melody</h2>
+                        @if (Auth::check())
+                            <h2>{{Auth::user()->namaDepan}}</h2>
+                        @else
+                            <h2>Melody</h2>
+                        @endif
                         <hr>
                         <h2>Online</h2>
                     </div>
@@ -52,9 +56,9 @@
                     <a href="{{ route('kadaluarsa')}}">
                         <p class="underline mt-2">Kadaluarsa</p>
                     </a>
-                    <a href="{{ route('actionlogout')}}">
+                    <!-- <a href="{{ route('actionlogout')}}">
                         <p class="underline mt-2">Logout</p>
-                    </a>
+                    </a> -->
                 </center>
             </div>
         </div>

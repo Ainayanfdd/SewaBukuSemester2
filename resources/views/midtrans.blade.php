@@ -8,7 +8,7 @@
 
 <body>
     <button id="pay-button"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrow!</button>
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Borrow!</button>
 
     <script type="text/javascript">
         var payButton = document.getElementById('pay-button');

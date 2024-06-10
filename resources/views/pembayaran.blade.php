@@ -56,8 +56,8 @@
                         class="w-full bg-white border-gray-300 rounded-md p-2 focus:outline-none focus:border-violet-700"
                         required disabled>
                 </div>
-                @include('midtrans')
             </form>
+            @include('midtrans')
         </div>
     </div>
 

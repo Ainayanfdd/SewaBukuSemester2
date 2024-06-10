@@ -13,16 +13,6 @@
 </head>
 <body>
     @include('components/header')
-    <div class="flex justify-between bg-purple-600 px-10 w-full font-bold">
-        <div class="relative">
-            <button class="bg-purple-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
-                <span>Kategori Buku</span>
-                <svg class="fill-current h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 14l-7-7 1.5-1.5L10 11l5.5-5.5L17 7z"/>
-                </svg>
-            </button>
-        </div>
-    </div>
     
     <div class="carousel w-full">
   <div id="item1" class="carousel-item w-full">
@@ -43,7 +33,7 @@
 <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
     Tren
     </button>
-    <div class="flex flex-wrap justify-center mt-8 space-x-4 py-12 space-y-6">
+    <div class="flex flex-wrap justify-center gap-3 py-4">
         <div class="w-64 bg-purple-200 p-4 rounded">
             <img src="{{ asset('images/buku/soul.png') }}" alt="Buku Soul" class="mx-auto" style="height:300px;width:250px;">
             <h2 class="text-center mt-4">10.000/minggu</h2>

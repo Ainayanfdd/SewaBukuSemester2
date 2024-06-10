@@ -49,24 +49,24 @@ class PembayaranController extends Controller
                 'ISBN' => $BeliBuku->ISBN,
                 'judulBuku' => $BeliBuku->nama_buku,
                 'status' => 'Diproses',
-                'tanggalPinjam' => today()->format('Y-m-d'),
-                'tanggalAkhir' => today()->addMonth()->format('Y-m-d'),
+                'tanggalPinjam' => today(),
+                'tanggalAkhir' => today()->addMonth(),
                 'biayaPinjam' => $BeliBuku->harga,
                 'snapToken' => $snapToken,
             ]);
 
-            return view('Pembayaran', compact('ajukanPinjam', 'BeliBuku'));
+            return view('pembayaran', compact('ajukanPinjam', 'BeliBuku'));
         } else {
             return redirect()->route('login');
         }
     }
 
     public function paySuccess($Pinjam_ID)
-    {  
+    {
         $dataSukses = Pinjam::where('Pinjam_ID', $Pinjam_ID)
-        ->where('user_ID', Auth::user()->user_ID)
-        ->where('status', 'Diproses')
-        ->firstOrFail();   
+            ->where('user_ID', Auth::user()->user_ID)
+            ->where('status', 'Diproses')
+            ->firstOrFail();
 
         $dataSukses->status = 'Dipinjam';
         $dataSukses->save();
