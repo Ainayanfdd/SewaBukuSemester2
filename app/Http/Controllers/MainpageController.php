@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-    use App\Models\Buku;
+use App\Models\Buku;
+use App\Models\Pinjam;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\Auth;
+
 
 class MainpageController extends Controller
 {
     public function library()
     {
-        return view('library');
+        $bukuDipinjam = Pinjam::join('Buku', 'Buku.ISBN', '=', 'Pinjam.ISBN')
+            ->where('user_ID', Auth::user()->user_ID)
+            ->get();
+
+        return view('library', compact('bukuDipinjam'));
     }
+
 
     public function history()
     {
