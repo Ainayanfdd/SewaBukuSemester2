@@ -34,17 +34,19 @@ Route::post('/register', [UserController::class, 'actionregister'])->name('actio
 Route::get('/logoutSuccess', [UserController::class, 'actionlogout'])->name('actionlogout');
 
 //Untuk yang ada di navbar
-Route::get('/library', [MainpageController::class, 'library']);
-Route::get('/history', [MainpageController::class, 'history']);
+Route::get('/library', [MainpageController::class, 'library'])->name('library');
+Route::get('/history', [MainpageController::class, 'history'])->name('history');
 Route::get('/kategori', [MainpageController::class, 'kategori'])->name('kategori');
-Route::get('/wishlist', [MainpageController::class, 'wishlist']);
-Route::get('/notify', [MainpageController::class, 'notify']);
-Route::get('/notifikasi', [MainpageController::class, 'notifikasi']);
+Route::get('/wishlist', [MainpageController::class, 'wishlist'])->name('wishlist');
+Route::get('/notify', [MainpageController::class, 'notify'])->name('notify');
+Route::get('/notifikasi', [MainpageController::class, 'notifikasi'])->name('notifikasi');
 Route::get('/detailbuku/{id}', [MainpageController::class, 'detailbuku'])->name('detailbuku');
 
 //Untuk pembayaran
 Route::get('/pembayaran/{ISBN}', [PembayaranController::class, 'paymentgateway'])->name('paymentgateway');
 Route::get('/pembayaran/{Pinjam_ID}/sukses', [PembayaranController::class, 'paySuccess'])->name('paySuccess');
+Route::get('/pembayaran/{Pinjam_ID}/perpanjang', [PembayaranController::class, 'perpanjangBuku'])->name('perpanjangBuku');
+Route::get('/pembayaran/{Pinjam_ID}/habis', [PembayaranController::class, 'waktuHabis'])->name('waktuHabis');
 
 //prefix admin
 Route::prefix('admin')->group(function () {

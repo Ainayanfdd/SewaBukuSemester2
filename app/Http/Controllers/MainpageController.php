@@ -15,9 +15,18 @@ class MainpageController extends Controller
     {
         $bukuDipinjam = Pinjam::join('Buku', 'Buku.ISBN', '=', 'Pinjam.ISBN')
             ->where('user_ID', Auth::user()->user_ID)
+            ->where('status', 'Dipinjam')
+            ->get();
+            $bukuLampau = Pinjam::join('Buku', 'Buku.ISBN', '=', 'Pinjam.ISBN')
+            ->where('user_ID', Auth::user()->user_ID)
+            ->where('status', 'Habis')
+            ->get();
+            $bukuDiproses = Pinjam::join('Buku', 'Buku.ISBN', '=', 'Pinjam.ISBN')
+            ->where('user_ID', Auth::user()->user_ID)
+            ->where('status', 'Diproses')
             ->get();
 
-        return view('library', compact('bukuDipinjam'));
+        return view('library', compact('bukuDipinjam', 'bukuLampau', 'bukuDiproses'));
     }
 
 

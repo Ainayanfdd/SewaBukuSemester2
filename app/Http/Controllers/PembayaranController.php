@@ -71,6 +71,18 @@ class PembayaranController extends Controller
         $dataSukses->status = 'Dipinjam';
         $dataSukses->save();
 
-        return redirect()->route('kategori');
+        return redirect()->route('library');
+    }
+
+    public function waktuHabis($Pinjam_ID)
+    {
+        $dataSukses = Pinjam::where('Pinjam_ID', $Pinjam_ID)
+            ->where('user_ID', Auth::user()->user_ID)
+            ->firstOrFail();
+
+        $dataSukses->status = 'Habis';
+        $dataSukses->save();
+
+        return redirect()->route('library');
     }
 }
